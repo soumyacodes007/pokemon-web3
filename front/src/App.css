@@ -1,8 +1,167 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Card types colors */
+.fire {
+  background-color: #fd7d24;
+  color: white;
+}
+
+.water {
+  background-color: #4592c4;
+  color: white;
+}
+
+.grass {
+  background-color: #9bcc50;
+  color: #333;
+}
+
+.electric {
+  background-color: #eed535;
+  color: #333;
+}
+
+.psychic {
+  background-color: #f366b9;
+  color: white;
+}
+
+.fighting {
+  background-color: #d56723;
+  color: white;
+}
+
+.darkness {
+  background-color: #707070;
+  color: white;
+}
+
+.metal {
+  background-color: #a8a8c0;
+  color: #333;
+}
+
+.dragon {
+  background-color: #7038f8;
+  color: white;
+}
+
+.fairy {
+  background-color: #fdb9e9;
+  color: #333;
+}
+
+.colorless {
+  background-color: #a8a878;
+  color: #333;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.loading-spinner::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
 }
 
 .logo {

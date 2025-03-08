@@ -1,0 +1,273 @@
+.navbar {
+  background-color: #2a2a72;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 2rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f8d030;
+}
+
+.nav-link.active {
+  color: #f8d030;
+  border-bottom: 3px solid #f8d030;
+}
+
+.wallet-section {
+  display: flex;
+  align-items: center;
+}
+
+.connect-wallet-btn {
+  background-color: #f8d030;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.connect-wallet-btn:hover {
+  background-color: #f5c211;
+  transform: translateY(-2px);
+}
+
+.wallet-connected {
+  display: flex;
+  align-items: center;
+}
+
+.wallet-address {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}
+
+.wallet-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-link {
+  display: block;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #f8d030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wallet-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.disconnect-btn {
+  color: #e74c3c;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background-color: #2a2a72;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-item {
+    height: 60px;
+    width: 100%;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-link:hover {
+    color: #f8d030;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .menu-icon {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .menu-icon::before,
+  .menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+  .menu-icon::before {
+    transform: translateY(-8px);
+  }
+
+  .menu-icon::after {
+    transform: translateY(8px);
+  }
+
+  .menu-icon.open {
+    background-color: transparent;
+  }
+
+  .menu-icon.open::before {
+    transform: rotate(45deg);
+  }
+
+  .menu-icon.open::after {
+    transform: rotate(-45deg);
+  }
+} 
